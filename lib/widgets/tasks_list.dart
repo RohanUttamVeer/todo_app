@@ -10,6 +10,10 @@ class TasksList extends StatelessWidget {
         TasksTile(),
         TasksTile(),
         TasksTile(),
+        TasksTile(),
+        TasksTile(),
+        TasksTile(),
+        TasksTile(),
       ],
     );
   }
