@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class AddTaskScreen extends StatelessWidget {
+  String? newTaskTitle;
+  final Function addTaskCallBack;
+  AddTaskScreen(this.addTaskCallBack);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,10 +32,18 @@ class AddTaskScreen extends StatelessWidget {
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
+              onChanged: (newText) {
+                newTaskTitle = newText;
+              },
             ),
             // ignore: deprecated_member_use
             FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                if (newTaskTitle != null)
+                  addTaskCallBack(newTaskTitle);
+                else
+                  Navigator.pop(context);
+              },
               child: Text(
                 'Add',
                 style: TextStyle(color: Colors.white),
