@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TasksTile extends StatefulWidget {
   @override
-  State<TasksTile> createState() => _TasksTileState();
+  _TasksTileState createState() => _TasksTileState();
 }
 
 class _TasksTileState extends State<TasksTile> {
@@ -24,7 +24,9 @@ class _TasksTileState extends State<TasksTile> {
         ),
       ),
       trailing: TaskCheckBox(
-          checkBoxState: isChecked, toggleCheckBoxState: checkBoxCallback),
+        checkBoxState: isChecked,
+        toggleCheckBoxState: checkBoxCallback,
+      ),
     );
   }
 }
