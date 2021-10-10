@@ -34,8 +34,7 @@ class TasksScreen extends StatelessWidget {
                 top: 50.0, left: 30.0, right: 30.0, bottom: 30.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children:<Widget>[
-                
+              children: <Widget>[
                 CircleAvatar(
                   backgroundColor: Colors.white,
                   radius: 30.0,
