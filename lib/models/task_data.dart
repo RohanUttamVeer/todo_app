@@ -5,7 +5,7 @@ import 'dart:collection';
 
 class TaskData extends ChangeNotifier {
   List<Task> _tasks = [
-    Task(name: 'add new tasks and fk\'in complete them'),
+    Task(name: 'add new tasks and long press to delete them'),
   ];
 
   UnmodifiableListView<Task> get tasks {
