@@ -8,3 +8,4 @@ class Task {
     isDone = !isDone;
   }
 }
+

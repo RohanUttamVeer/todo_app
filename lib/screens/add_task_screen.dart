@@ -1,10 +1,11 @@
+// ignore_for_file: unnecessary_null_comparison
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app/models/task_data.dart';
 
 // ignore: must_be_immutable
 class AddTaskScreen extends StatelessWidget {
-  String? newTaskTitle;
-  final Function addTaskCallBack;
-  AddTaskScreen(this.addTaskCallBack);
+  late String newTaskTitle;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,10 +40,12 @@ class AddTaskScreen extends StatelessWidget {
             // ignore: deprecated_member_use
             FlatButton(
               onPressed: () {
-                if (newTaskTitle != null)
-                  addTaskCallBack(newTaskTitle);
-                else
+                // if (newTaskTitle != null) {
+                  Provider.of<TaskData>(context, listen: false).addTask(newTaskTitle);
                   Navigator.pop(context);
+                // } 
+                // else
+                //   Navigator.pop(context);
               },
               child: Text(
                 'Add',
